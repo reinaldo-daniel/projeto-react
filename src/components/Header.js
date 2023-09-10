@@ -20,10 +20,11 @@ export default function Header () {
 const style = StyleSheet.create({
     container: {
         marginTop: StatusBar.currentHeight,
+        gap: 25,
     },
     title: {
         color: '#fff',
-        fontFamily: 'Valorant Font.ttf'
+        fontSize: 30,
     },
     containerButtons: {
         display: 'flex',
