@@ -1,17 +1,17 @@
 import React from "react"
 import { StyleSheet, Text, View, StatusBar } from "react-native"
 
-import Button from './Button'
+import Button from './Buttonn'
 
-export default function Header () {
+export default function Headerr() {
     return (
         <View style={style.container}>
             <Text style={style.title}>
                 Tudo sobre valorant
             </Text>
             <View style={style.containerButtons}>
-                <Button title={'Agentes'} onPress={() => {console.log('Agentes');}}/>
-                <Button title={'Mapas'} onPress={() => {console.log('Mapas');}}/>
+                <Button title={'Agentes'} onPress={() => { console.log('Agentes'); }} />
+                <Button title={'Mapas'} onPress={() => { console.log('Mapas'); }} />
             </View>
         </View>
     )
