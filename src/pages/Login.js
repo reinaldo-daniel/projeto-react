@@ -6,7 +6,7 @@ const Login = ({ navigation }) => {
     const [password, setPassword] = useState("");
 
     const handleLogin = () => {
-        navigation.navigate('Extra');
+        navigation.navigate('Home');
     }
 
     return (
