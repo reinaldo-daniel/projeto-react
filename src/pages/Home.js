@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
 import axios from "axios";
 
 import AgentCard from "../components/AgentCard";
@@ -31,21 +31,20 @@ export default function Home() {
     }
 
     return (
-        <ScrollView contentContainerStyle={style.container}>
-            <Headerr />
-            {agentes.map((data, index) => {
-                const { bustPortrait, displayName } = data;
-                return (
-                    <AgentCard key={index} urlImage={bustPortrait} name={displayName} />
-                )
-            })}
-        </ScrollView>
-    )
+        <FlatList
+            contentContainerStyle={style.container}
+            data={agentes}
+            renderItem={({ item }) => (
+                <AgentCard urlImage={item.bustPortrait} name={item.displayName} />
+            )}
+            ListHeaderComponent={<Headerr />}
+        />
+    );
 }
 
 const style = StyleSheet.create({
     container: {
-        flexGrow: 1, // Isso faz com que o ScrollView cresça para acomodar o conteúdo
+        flexGrow: 1,
         backgroundColor: '#121E26',
         alignItems: 'center',
         justifyContent: 'center',
