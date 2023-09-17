@@ -35,7 +35,9 @@ export default function Home() {
             contentContainerStyle={style.container}
             data={agentes}
             renderItem={({ item }) => (
-                <AgentCard urlImage={item.bustPortrait} name={item.displayName} />
+                <AgentCard
+                    urlImage={item.bustPortrait}
+                    name={item.displayName} />
             )}
             ListHeaderComponent={<Headerr />}
         />
